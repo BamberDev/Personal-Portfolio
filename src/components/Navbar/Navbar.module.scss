@@ -1,4 +1,4 @@
-.navContainer {
+.navbarContainer {
   width: 100%;
   padding: 15px 0;
   background-color: var(--secondary-color);
@@ -11,15 +11,16 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-
     position: relative;
   }
+
   img {
     height: 40px;
     width: 40px;
     border-radius: 5px;
   }
-  .navLinks {
+
+  .navbarLinks {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -30,27 +31,49 @@
       flex-direction: row;
       justify-content: flex-end;
     }
+
     li {
       padding: 20px 30px;
+
       @media (min-width: 1024px) {
         padding: 0;
       }
-      a {
+
+      .navbarItem {
+        position: relative;
         padding: 20px 30px;
-        transition: color 0.5s;
+        transition: color 0.5s, opacity 0.5s ease;
         color: inherit;
         text-decoration: none;
-      }
-      @media (min-width: 1024px) {
-        cursor: pointer;
-        &:hover {
-          text-decoration: overline;
 
-          color: var(--main-color);
+        @media (min-width: 1024px) {
+          opacity: 0.8;
+          cursor: pointer;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            top: 15px;
+            left: 10%;
+            background-color: var(--white-color);
+            transition: transform 0.5s ease;
+            transform: scale(0, 1);
+          }
+
+          &:hover::after {
+            transform: scale(1, 1);
+          }
+        }
+
+        &:hover {
+          opacity: 1;
         }
       }
     }
   }
+
   .menu {
     width: 100%;
     height: 100%;
@@ -66,13 +89,16 @@
       padding: 0;
     }
   }
+
   .showMenu {
     right: 0;
   }
-  .navButton {
+
+  .navbarButton {
     @media (min-width: 1024px) {
       display: none;
     }
+
     svg {
       width: 40px;
       height: 40px;
