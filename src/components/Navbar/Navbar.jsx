@@ -20,20 +20,28 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.navContainer}>
+    <nav className={styles.navbarContainer}>
       <div className={clsx("container", styles.navbar)}>
         <img src={logo} alt="My own logo - KC" />
         <div className={clsx(styles.menu, showMenu && styles.showMenu)}>
-          <ul className={styles.navLinks}>
+          <ul className={styles.navbarLinks}>
             {navOptions.map((option) => (
               <li key={nanoid()}>
                 {option.isScroll && (
-                  <a onClick={closeMenuOnMobile} href={option.path}>
+                  <a
+                    className={styles.navbarItem}
+                    onClick={closeMenuOnMobile}
+                    href={option.path}
+                  >
                     {option.name}
                   </a>
                 )}
                 {!option.isScroll && (
-                  <Link onClick={closeMenuOnMobile} to={option.path}>
+                  <Link
+                    className={styles.navbarItem}
+                    onClick={closeMenuOnMobile}
+                    to={option.path}
+                  >
                     {option.name}
                   </Link>
                 )}
@@ -41,7 +49,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className={styles.navButton} onClick={toggleMenu}>
+        <div className={styles.navbarButton} onClick={toggleMenu}>
           {showMenu ? <IoClose /> : <IoMenu />}
         </div>
       </div>
