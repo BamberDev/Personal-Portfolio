@@ -1,0 +1,27 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  scroll-behavior: smooth;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: 1024px) {
+    width: 1000px;
+    padding: 0;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1300px;
+  }
+}
