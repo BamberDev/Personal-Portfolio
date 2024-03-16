@@ -1,0 +1,40 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 200px;
+  right: 15px;
+  background-color: var(--secondary-color);
+  color: inherit;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+    animation: jump 1s ease infinite;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
