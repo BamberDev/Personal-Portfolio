@@ -1,6 +1,6 @@
 export const navOptions = [
   { name: "HOME", path: "/" },
+  { name: "ABOUT", path: "/experience" },
   { name: "PROJECTS", path: "/projects" },
-  { name: "EXPERIENCE", path: "/experience" },
   { name: "CONTACT", path: "#contact", isScroll: true },
 ];
