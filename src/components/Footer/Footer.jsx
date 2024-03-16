@@ -1,15 +1,13 @@
 import clsx from "clsx";
 import styles from "./Footer.module.scss";
 import { FaLinkedin, FaGithub, FaAt } from "react-icons/fa";
+import ScrollToTopButton from "./ScrollToTopButton/ScrollToTopButton";
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
       <div className={clsx("container", styles.footerContent)}>
         <div>
           <ul className={styles.footerNavbar}>
-            <li>
-              <a href="#about">HOME</a>
-            </li>
             <li>
               <a href="#about">ABOUT</a>
             </li>
@@ -18,6 +16,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        <hr />
         <div className={styles.footerLinks}>
           <div>
             <h3>CONTACT ME</h3>
@@ -47,6 +46,7 @@ const Footer = () => {
           &copy; COPYRIGHT {new Date().getFullYear()} | Made by Kevin Cieślik
         </p>
       </div>
+      <ScrollToTopButton />
     </footer>
   );
 };
