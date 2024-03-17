@@ -16,25 +16,24 @@
   align-items: center;
   pointer-events: none;
 
-  @keyframes jump {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
   &.visible {
     opacity: 1;
     pointer-events: auto;
     animation: jump 1s ease infinite;
   }
+
   svg {
     width: 30px;
     height: 30px;
+  }
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
