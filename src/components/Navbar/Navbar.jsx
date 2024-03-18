@@ -22,7 +22,9 @@ const Navbar = () => {
   return (
     <nav className={styles.navbarContainer}>
       <div className={clsx("container", styles.navbarContent)}>
-        <img src={logo} alt="My own logo - KC" />
+        <a href="/">
+          <img src={logo} alt="My own logo - KC" />
+        </a>
         <div className={clsx(styles.menu, showMenu && styles.showMenu)}>
           <ul className={styles.navbarLinks}>
             {navOptions.map((option) => (
