@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import styles from "./Footer.module.scss";
-import { FaLinkedin, FaGithub, FaAt } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import ScrollToTopButton from "./ScrollToTopButton/ScrollToTopButton";
+import logo from "./../../assets/KC-logo.png";
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
@@ -9,41 +10,50 @@ const Footer = () => {
         <div>
           <ul className={styles.footerNavbar}>
             <li>
+              <a href="#about">HOME</a>
+            </li>
+            <li>
               <a href="#about">ABOUT</a>
             </li>
             <li>
               <a href="#about">PROJECTS</a>
             </li>
           </ul>
+          <hr />
         </div>
-        <hr />
         <div className={styles.footerLinks}>
           <div>
-            <h3>CONTACT ME</h3>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <FaAt />
+            <a href="/">
+              <img src={logo} alt="Logo" />
             </a>
           </div>
           <div>
-            <h3>SOCIALS</h3>
-            <a
-              href="https://github.com/BamberDev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kevin-cie%C5%9Blik-67b393282/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </a>
+            <ul className={styles.socials}>
+              <li>
+                <a
+                  href="https://github.com/BamberDev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub />
+                  Github
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/kevin-cie%C5%9Blik-67b393282/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin />
+                  Linkedin
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <p className={styles.copyright}>
-          &copy; COPYRIGHT {new Date().getFullYear()} | Made by Kevin Cieślik
+          Copyright &copy; {new Date().getFullYear()} | Kevin Cieślik
         </p>
       </div>
       <ScrollToTopButton />
