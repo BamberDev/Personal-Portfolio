@@ -1,37 +1,47 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./ContactForm.module.scss";
 
 const ContactForm = () => {
   const form = useRef();
+  const [alertMessage, setAlertMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    emailjs
-      .sendForm(
+    try {
+      await emailjs.sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
         form.current,
         {
           publicKey: import.meta.env.VITE_PUBLIC_KEY,
         }
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          e.target.reset();
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
       );
+
+      setAlertMessage("Email sent successfully!");
+      setTimeout(() => {
+        setAlertMessage(null);
+      }, 3000);
+      setLoading(false);
+      e.target.reset();
+    } catch (error) {
+      setAlertMessage("Failed to send email. Please try again later.");
+      setTimeout(() => {
+        setAlertMessage(null);
+      }, 5000);
+      setLoading(false);
+    }
   };
 
   return (
     <section>
       <div className={styles.contactContainer}>
         <div className={styles.contactInfo}>
+          {alertMessage && <p className={styles.alert}>{alertMessage}</p>}
+          {loading && <p className={styles.loader}>Sending...</p>}
           <h1>Contact</h1>
           <p>
             Feel free to get in touch using the form below or email me directly
