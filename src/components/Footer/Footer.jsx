@@ -10,13 +10,16 @@ const Footer = () => {
         <div>
           <ul className={styles.footerNavbar}>
             <li>
-              <a href="#about">HOME</a>
+              <a href="/">HOME</a>
             </li>
             <li>
               <a href="#about">ABOUT</a>
             </li>
             <li>
               <a href="#about">PROJECTS</a>
+            </li>
+            <li>
+              <a href="#about">CONTACT</a>
             </li>
           </ul>
           <hr />
