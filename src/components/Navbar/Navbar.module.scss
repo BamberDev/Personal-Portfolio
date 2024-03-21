@@ -1,12 +1,19 @@
 .navbarContainer {
   width: 100%;
-  padding: 15px 0;
+  padding: 5px 0;
   background-color: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 5;
+  transition: opacity 1s;
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .navbarContent {
     display: flex;
     justify-content: space-between;
@@ -16,6 +23,7 @@
   }
 
   img {
+    margin-top: 7px;
     height: 40px;
     width: 40px;
     border-radius: 5px;
@@ -81,7 +89,7 @@
     padding: 50px 0;
     background-color: var(--secondary-color);
     position: fixed;
-    top: 65px;
+    top: 55px;
     right: -100%;
     transition: right 0.5s;
 
@@ -101,6 +109,7 @@
     }
 
     svg {
+      margin-top: 7px;
       width: 40px;
       height: 40px;
     }
