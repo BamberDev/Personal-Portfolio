@@ -3,6 +3,7 @@ import styles from "./Footer.module.scss";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import ScrollToTopButton from "./ScrollToTopButton/ScrollToTopButton";
 import logo from "./../../assets/KC-logo.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
@@ -10,25 +11,25 @@ const Footer = () => {
         <div>
           <ul className={styles.footerNavbar}>
             <li>
-              <a href="/">HOME</a>
+              <Link to="/">HOME</Link>
             </li>
             <li>
               <a href="#about">ABOUT</a>
             </li>
             <li>
-              <a href="#about">PROJECTS</a>
+              <a href="#projects">PROJECTS</a>
             </li>
             <li>
-              <a href="#about">CONTACT</a>
+              <Link to="/contact">CONTACT</Link>
             </li>
           </ul>
           <hr />
         </div>
         <div className={styles.footerLinks}>
           <div>
-            <a href="/">
+            <Link to="/">
               <img src={logo} alt="Logo" />
-            </a>
+            </Link>
           </div>
           <div>
             <ul className={styles.socials}>
