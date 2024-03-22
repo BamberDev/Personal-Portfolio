@@ -8,15 +8,31 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
-      <Footer />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <HomePage />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Navbar />
+              <ContactPage />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </Router>
   );
 };
