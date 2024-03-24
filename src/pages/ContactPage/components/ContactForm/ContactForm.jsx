@@ -1,15 +1,26 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 import styles from "./ContactForm.module.scss";
 
 const ContactForm = () => {
   const form = useRef();
   const [alertMessage, setAlertMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if (!recaptchaValue) {
+      setAlertMessage("Please solve the reCAPTCHA first.");
+      setTimeout(() => {
+        setAlertMessage(null);
+      }, 3000);
+      setLoading(false);
+      return;
+    }
 
     try {
       await emailjs.sendForm(
@@ -87,6 +98,12 @@ const ContactForm = () => {
               required
             />
             <input className={styles.submitButton} type="submit" value="Send" />
+            <ReCAPTCHA
+              className={styles.recaptcha}
+              theme="dark"
+              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+              onChange={(value) => setRecaptchaValue(value)}
+            />
           </div>
         </form>
       </div>
