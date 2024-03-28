@@ -10,11 +10,16 @@ const LandingPage = () => {
         Your browser does not support the video tag.
       </video>
       <div className={clsx("container", styles.landingPageContainer)}>
-        <h1>HI, I&apos;M KEVIN.</h1>
+        <h1>
+          HI THERE,
+          <span className={styles.bottomHeading}>I&apos;M KEVIN.</span>
+        </h1>
         <h2>FRONTEND DEVELOPER</h2>
         <p>
-          I build pixel-perfect, user-friendly and immersive digital
-          experiences.
+          <span className={styles.topParagraph}>
+            I build pixel-perfect, user-friendly
+          </span>
+          and immersive digital experiences.
         </p>
 
         <MdKeyboardArrowDown />
