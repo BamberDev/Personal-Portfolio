@@ -16,15 +16,73 @@
   }
 
   .landingPageContainer {
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: end;
+
+    @media (min-width: 420px) {
+      margin-bottom: 140px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      justify-content: center;
+    }
   }
+
   h1 {
-    font-size: 100px;
+    display: flex;
+    flex-direction: column;
+    font-size: 54px;
+    line-height: 1;
+    @media (min-width: 420px) {
+      font-size: 68px;
+    }
+    @media (min-width: 768px) {
+      font-size: 80px;
+    }
+    @media (min-width: 1024px) {
+      text-align: start;
+      .bottomHeading {
+        margin-left: 10%;
+      }
+    }
   }
+
+  h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    @media (min-width: 420px) {
+      font-size: 32px;
+    }
+    @media (min-width: 768px) {
+      font-size: 42px;
+    }
+    @media (min-width: 1024px) {
+    }
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    @media (min-width: 420px) {
+      font-size: 22px;
+    }
+    @media (min-width: 768px) {
+      font-size: 28px;
+    }
+    @media (min-width: 1024px) {
+      text-align: end;
+      .topParagraph {
+        margin-right: 10%;
+      }
+    }
+  }
+
   svg {
+    align-self: center;
     position: absolute;
     bottom: 10px;
     width: 40px;
