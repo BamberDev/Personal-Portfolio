@@ -1,12 +1,63 @@
 .aboutMeContainer {
-  height: 100vh;
-  margin: 30px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  justify-content: center;
+  padding: 20px 0;
 
-p {
-  margin: 10px;
+  @media (min-width: 768px) {
+    align-items: center;
+  }
+
+  h1 {
+    margin: 10px 0;
+    font-size: 36px;
+
+    @media (min-width: 420px) {
+      font-size: 42px;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 50px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 58px;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 64px;
+    }
+  }
+
+  p {
+    margin: 10px 0;
+    text-align: start;
+    line-height: 1.25;
+
+    @media (min-width: 420px) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 768px) {
+      text-align: center;
+      font-size: 22px;
+      max-width: 70%;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 28px;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 32px;
+    }
+  }
+
+  a {
+    margin: 0 auto;
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+  }
 }
