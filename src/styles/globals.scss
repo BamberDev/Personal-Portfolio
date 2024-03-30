@@ -7,7 +7,12 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--grey-color);
+  background-color: var(--dark-grey-color);
+  background-image: url("../assets/triangle-background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--white-color);
   scroll-behavior: smooth;
 }
@@ -17,6 +22,6 @@ body {
   padding: 0 20px;
 
   @media (min-width: 1440px) {
-    width: 1400px;
+    max-width: 1400px;
   }
 }
