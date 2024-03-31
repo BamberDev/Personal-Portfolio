@@ -20,9 +20,11 @@ const AboutMe = () => {
           and ideas.
         </p>
         <p>Let&apos;s make something!</p>
-        <Link to="/contact">CONTACT</Link>
-        <TechStack />
+        <Link className={styles.contactButton} to="/contact">
+          CONTACT
+        </Link>
       </div>
+      <TechStack />
     </section>
   );
 };
