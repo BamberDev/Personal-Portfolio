@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import "./ScrollToTopButton.scss";
+import styles from "./ScrollToTopButton.module.scss";
+import clsx from "clsx";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +25,7 @@ const ScrollToTopButton = () => {
 
   return (
     <button
-      className={`scroll-to-top ${isVisible ? "visible" : ""}`}
+      className={clsx(styles.scrollToTop, { [styles.visible]: isVisible })}
       onClick={scrollToTop}
     >
       <FaArrowUp />
