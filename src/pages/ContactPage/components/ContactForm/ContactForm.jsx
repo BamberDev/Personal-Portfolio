@@ -48,7 +48,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section>
+    <section className="container">
       <div className={styles.contactContainer}>
         <div className={styles.contactInfo}>
           {alertMessage && <p className={styles.alert}>{alertMessage}</p>}
@@ -64,7 +64,7 @@ const ContactForm = () => {
         </div>
         <form ref={form} onSubmit={sendEmail}>
           <div className={styles.inputContainer}>
-            <div>
+            <div className={styles.nameInput}>
               <label htmlFor="userName">Enter your Name</label>
               <input
                 id="userName"
@@ -75,7 +75,7 @@ const ContactForm = () => {
                 required
               />
             </div>
-            <div>
+            <div className={styles.emailInput}>
               <label htmlFor="userEmail">Enter your Email</label>
               <input
                 id="userEmail"
@@ -88,15 +88,17 @@ const ContactForm = () => {
             </div>
           </div>
           <div>
-            <label htmlFor="message">Enter your message</label>
-            <textarea
-              id="message"
-              placeholder="Message"
-              name="message"
-              rows="5"
-              aria-required="true"
-              required
-            />
+            <div className={styles.messageInput}>
+              <label htmlFor="message">Enter your message</label>
+              <textarea
+                id="message"
+                placeholder="Message"
+                name="message"
+                rows="5"
+                aria-required="true"
+                required
+              />
+            </div>
             <input className={styles.submitButton} type="submit" value="Send" />
             <ReCAPTCHA
               className={styles.recaptcha}
@@ -104,6 +106,10 @@ const ContactForm = () => {
               sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
               onChange={(value) => setRecaptchaValue(value)}
             />
+            <p>
+              I value any feedback and suggestions for improvement. Feel free to
+              share any thoughts or ideas you have regarding my website.
+            </p>
           </div>
         </form>
       </div>
