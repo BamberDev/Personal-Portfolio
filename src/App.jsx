@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
             <>
               <Navbar />
               <HomePage />
+              <ScrollToTopButton />
               <Footer />
             </>
           }
