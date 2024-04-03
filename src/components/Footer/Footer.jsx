@@ -1,27 +1,44 @@
 import clsx from "clsx";
 import styles from "./Footer.module.scss";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import ScrollToTopButton from "./ScrollToTopButton/ScrollToTopButton";
 import logo from "./../../assets/KC-logo.png";
 import { Link } from "react-router-dom";
+import { nanoid } from "nanoid";
+import { navbarOptions } from "../../data/navbarOptions";
 const Footer = () => {
+  const filteredNavbarOptions = navbarOptions.filter((option) => {
+    if (location.pathname === "/contact") {
+      return option.showOnContact;
+    }
+    return true;
+  });
+
+  const handleNavbarItemClick = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <footer className={styles.footerContainer}>
       <div className={clsx("container", styles.footerContent)}>
         <div>
           <ul className={styles.footerNavbar}>
-            <li>
-              <Link to="/">HOME</Link>
-            </li>
-            <li>
-              <a href="/#about">ABOUT</a>
-            </li>
-            <li>
-              <a href="/#projects">PROJECTS</a>
-            </li>
-            <li>
-              <Link to="/contact">CONTACT</Link>
-            </li>
+            {filteredNavbarOptions.map((option) => (
+              <li key={nanoid()}>
+                {option.isScroll ? (
+                  <a className={styles.navbarItem} href={option.path}>
+                    {option.name}
+                  </a>
+                ) : (
+                  <Link
+                    className={styles.navbarItem}
+                    onClick={handleNavbarItemClick}
+                    to={option.path}
+                  >
+                    {option.name}
+                  </Link>
+                )}
+              </li>
+            ))}
           </ul>
           <hr />
         </div>
@@ -60,7 +77,6 @@ const Footer = () => {
           Copyright &copy; {new Date().getFullYear()} | Kevin Cieślik
         </p>
       </div>
-      <ScrollToTopButton />
     </footer>
   );
 };
