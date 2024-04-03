@@ -7,12 +7,12 @@ const TechStack = () => {
     <div className={styles.toolContainer}>
       <h1>TOOLS I USE</h1>
       <div className={styles.toolList}>
-        {techStackOptions.map((tool) => (
+        {techStackOptions.map((option) => (
           <div className={styles.toolCard} key={nanoid()}>
-            <a href={tool.url} target="_blank" rel="noopener noreferrer">
-              <img src={tool.icon} alt={tool.alt} />
+            <a href={option.url} target="_blank" rel="noopener noreferrer">
+              <img src={option.icon} alt={option.alt} />
             </a>
-            <p>{tool.description}</p>
+            <p>{option.description}</p>
           </div>
         ))}
       </div>
