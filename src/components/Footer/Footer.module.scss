@@ -15,7 +15,6 @@
       list-style: none;
 
       li {
-        height: 25px;
         position: relative;
         transition: color 0.5s, opacity 0.5s ease;
 
@@ -24,9 +23,16 @@
         }
 
         a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           text-decoration: none;
           color: inherit;
-          padding: 5px 15px;
+          padding: 5px 7px;
+
+          @media (min-width: 420px) {
+            padding: 0px 15px;
+          }
 
           &::after {
             content: "";
@@ -55,10 +61,11 @@
     }
 
     hr {
-      width: 65%;
+      width: 80%;
       margin: 15px auto;
 
       @media (min-width: 1024px) {
+        width: 70%;
         opacity: 0.7;
       }
     }
@@ -115,7 +122,7 @@
 
     .copyright {
       font-size: 14px;
-      margin: 15px 0;
+      margin-top: 15px;
     }
   }
 }
