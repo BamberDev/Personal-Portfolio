@@ -2,19 +2,25 @@ import clsx from "clsx";
 import styles from "./Footer.module.scss";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import logo from "./../../assets/KC-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { navbarOptions } from "../../data/navbarOptions";
 const Footer = () => {
+  const location = useLocation();
+
   const filteredNavbarOptions = navbarOptions.filter((option) => {
-    if (location.pathname === "/contact") {
-      return option.showOnContact;
+    switch (location.pathname) {
+      case "/":
+        return option.showOnHome;
+      case "/projects":
+        return option.showOnProjects;
+      case "/contact":
+        return option.showOnContact;
     }
-    return true;
   });
 
   const handleNavbarItemClick = () => {
-    window.scrollTo({ top: 0 });
+    window.scrollTo(0, 0);
   };
 
   return (

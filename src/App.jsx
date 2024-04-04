@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import Projects from "./pages/ProjectsPage/Projects/Projects";
 
 const App = () => {
   return (
@@ -33,6 +34,16 @@ const App = () => {
           }
         />
 
+        <Route
+          path="/projects"
+          element={
+            <>
+              <Navbar />
+              <Projects />
+              <Footer />
+            </>
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

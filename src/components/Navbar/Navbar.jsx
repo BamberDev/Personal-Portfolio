@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { nanoid } from "nanoid";
-import { navOptions } from "../../data/navOptions";
+import { navbarOptions } from "../../data/navbarOptions";
 import logo from "../../assets/KC-logo.png";
 import styles from "./Navbar.module.scss";
 
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
   const [visible, setVisible] = useState(true);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -38,6 +39,29 @@ const Navbar = () => {
     };
   }, [prevScrollPos]);
 
+  const handleNavbarItemClick = () => {
+    window.scrollTo(0, 0);
+  };
+
+  const filteredNavbarOptions = navbarOptions.filter((option) => {
+    switch (location.pathname) {
+      case "/":
+        return option.showOnHome;
+      case "/projects":
+        return option.showOnProjects;
+      case "/contact":
+        return option.showOnContact;
+    }
+  });
+
+  const handleSmoothScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <nav className={clsx(styles.navbarContainer, !visible && styles.hidden)}>
       <div className={clsx("container", styles.navbarContent)}>
@@ -48,12 +72,15 @@ const Navbar = () => {
         </div>
         <div className={clsx(styles.menu, showMenu && styles.showMenu)}>
           <ul className={styles.navbarLinks}>
-            {navOptions.map((option) => (
+            {filteredNavbarOptions.map((option) => (
               <li key={nanoid()}>
                 {option.isScroll ? (
                   <a
                     className={styles.navbarItem}
-                    onClick={closeMenuOnMobile}
+                    onClick={(e) => {
+                      closeMenuOnMobile();
+                      handleSmoothScroll(e, option.path);
+                    }}
                     href={option.path}
                   >
                     {option.name}
@@ -61,7 +88,10 @@ const Navbar = () => {
                 ) : (
                   <Link
                     className={styles.navbarItem}
-                    onClick={closeMenuOnMobile}
+                    onClick={() => {
+                      closeMenuOnMobile();
+                      handleNavbarItemClick();
+                    }}
                     to={option.path}
                   >
                     {option.name}

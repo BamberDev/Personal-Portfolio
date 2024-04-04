@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--dark-grey-color);
@@ -14,8 +15,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: var(--white-color);
-  scroll-behavior: smooth;
 }
+
 .container {
   width: 100%;
   margin: 0 auto;

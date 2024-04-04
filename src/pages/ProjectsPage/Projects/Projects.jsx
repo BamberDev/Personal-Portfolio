@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import styles from "./Projects.module.scss";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import clsx from "clsx";
-import { sliderItems } from "../../../../data/projectOptions";
+import { sliderItems } from "../../../data/projectOptions";
+import { MdArrowOutward } from "react-icons/md";
 
 const Projects = () => {
   const [itemActive, setItemActive] = useState(0);
@@ -27,7 +28,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="container">
+    <section>
       <div id="projects" className={styles.projectsContainer}>
         <div className={styles.slider}>
           <div className={styles.list}>
@@ -43,6 +44,22 @@ const Projects = () => {
                   <p>{option.techStack}</p>
                   <h2>{option.sliderTitle}</h2>
                   <p>{option.description}</p>
+                  <div className={styles.links}>
+                    <a
+                      href={option.code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      CODE <MdArrowOutward />
+                    </a>
+                    <a
+                      href={option.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      DEMO <MdArrowOutward />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
