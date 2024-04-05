@@ -8,8 +8,10 @@ const NotFoundPage = () => {
     <div className={clsx("container", styles.notFoundPageContainer)}>
       <h1>SEEMS LIKE YOU GOT LOST :(</h1>
       <h2>404 | Page not found.</h2>
-      <Link to="/">
-        GO BACK HOME <FaArrowRotateLeft />
+      <Link to="/" className={styles.homeButton}>
+        <span>GO BACK HOME</span>
+        <i></i>
+        <FaArrowRotateLeft />
       </Link>
     </div>
   );
