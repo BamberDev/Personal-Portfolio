@@ -20,8 +20,21 @@ const AboutMe = () => {
           and ideas.
         </p>
         <p>Let&apos;s make something!</p>
-        <Link className={styles.contactButton} to="/contact">
-          CONTACT
+        <Link
+          className={styles.linkButton}
+          onClick={() => window.scrollTo(0, 0)}
+          to="/contact"
+        >
+          <span>CONTACT</span>
+          <i></i>
+        </Link>
+        <Link
+          className={styles.linkButton}
+          onClick={() => window.scrollTo(0, 0)}
+          to="/projects"
+        >
+          <span>PROJECTS</span>
+          <i></i>
         </Link>
       </div>
       <TechStack />
