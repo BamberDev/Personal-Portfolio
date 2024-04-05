@@ -98,8 +98,11 @@ const ContactForm = () => {
                 aria-required="true"
                 required
               />
+              <button className={styles.submitButton} type="submit">
+                <span>SEND</span>
+                <i></i>
+              </button>
             </div>
-            <input className={styles.submitButton} type="submit" value="Send" />
             <ReCAPTCHA
               className={styles.recaptcha}
               theme="dark"
