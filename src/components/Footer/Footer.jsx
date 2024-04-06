@@ -20,7 +20,9 @@ const Footer = () => {
   });
 
   const handleNavbarItemClick = () => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500);
   };
 
   return (
