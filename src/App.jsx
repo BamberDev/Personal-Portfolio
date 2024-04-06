@@ -6,6 +6,8 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import Projects from "./pages/ProjectsPage/Projects/Projects";
+import { AnimatePresence } from "framer-motion";
+import PageTransition from "./animations/PageTransition/PageTransition";
 
 const App = () => {
   return (
@@ -14,37 +16,53 @@ const App = () => {
         <Route
           path="/"
           element={
-            <>
-              <Navbar />
-              <HomePage />
-              <ScrollToTopButton />
-              <Footer />
-            </>
+            <AnimatePresence mode="wait">
+              <PageTransition key="home">
+                <Navbar />
+                <HomePage />
+                <ScrollToTopButton />
+                <Footer />
+              </PageTransition>
+            </AnimatePresence>
           }
         />
 
         <Route
           path="/contact"
           element={
-            <>
-              <Navbar />
-              <ContactPage />
-              <Footer />
-            </>
+            <AnimatePresence mode="wait">
+              <PageTransition key="contact">
+                <Navbar />
+                <ContactPage />
+                <Footer />
+              </PageTransition>
+            </AnimatePresence>
           }
         />
 
         <Route
           path="/projects"
           element={
-            <>
-              <Navbar />
-              <Projects />
-              <Footer />
-            </>
+            <AnimatePresence mode="wait">
+              <PageTransition key="projects">
+                <Navbar />
+                <Projects />
+                <Footer />
+              </PageTransition>
+            </AnimatePresence>
           }
         />
-        <Route path="*" element={<NotFoundPage />} />
+
+        <Route
+          path="*"
+          element={
+            <AnimatePresence mode="wait">
+              <PageTransition key="notfound">
+                <NotFoundPage />
+              </PageTransition>
+            </AnimatePresence>
+          }
+        />
       </Routes>
     </Router>
   );
