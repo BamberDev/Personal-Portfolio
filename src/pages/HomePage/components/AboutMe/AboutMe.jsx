@@ -3,6 +3,12 @@ import styles from "./AboutMe.module.scss";
 import TechStack from "./components/TechStack/TechStack";
 
 const AboutMe = () => {
+  const scrollToTopWithDelay = () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500);
+  };
+
   return (
     <section className="container">
       <div id="about" className={styles.aboutMeContainer}>
@@ -22,7 +28,7 @@ const AboutMe = () => {
         <p>Let&apos;s make something!</p>
         <Link
           className={styles.linkButton}
-          onClick={() => window.scrollTo(0, 0)}
+          onClick={scrollToTopWithDelay}
           to="/contact"
         >
           <span>CONTACT</span>
@@ -30,7 +36,7 @@ const AboutMe = () => {
         </Link>
         <Link
           className={styles.linkButton}
-          onClick={() => window.scrollTo(0, 0)}
+          onClick={scrollToTopWithDelay}
           to="/projects"
         >
           <span>PROJECTS</span>
