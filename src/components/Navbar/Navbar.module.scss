@@ -90,17 +90,19 @@
     background-color: var(--dark-grey-color);
     position: fixed;
     top: 55px;
-    right: -100%;
-    transition: right 0.5s;
+    right: 0;
+    opacity: 0;
 
     @media (min-width: 1024px) {
       position: initial;
       padding: 0;
+      opacity: 1;
     }
   }
 
   .showMenu {
-    right: 0;
+    opacity: 1;
+    transition: opacity 0.3s;
   }
 
   .navbarButton {
