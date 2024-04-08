@@ -13,6 +13,24 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const location = useLocation();
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = showMenu ? "hidden" : "auto";
+  }, [showMenu]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const visible = prevScrollPos > currentScrollPos;
+      setPrevScrollPos(currentScrollPos);
+      setVisible(visible);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -23,24 +41,10 @@ const Navbar = () => {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const visible = prevScrollPos > currentScrollPos;
-
-      setPrevScrollPos(currentScrollPos);
-      setVisible(visible);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
-
   const handleNavbarItemClick = () => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500);
   };
 
   const filteredNavbarOptions = navbarOptions.filter((option) => {
