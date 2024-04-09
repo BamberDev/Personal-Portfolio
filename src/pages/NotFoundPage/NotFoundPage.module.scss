@@ -8,18 +8,44 @@
   text-align: center;
 
   h1 {
-    font-size: 32px;
+    font-size: 34px;
     width: 60%;
+
+    @media (min-width: 420px) {
+      font-size: 42px;
+    }
+
     @media (min-width: 768px) {
       width: 100%;
-      font-size: 48px;
+      font-size: 50px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 58px;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 64px;
     }
   }
 
   h2 {
     font-size: 20px;
+
+    @media (min-width: 420px) {
+      font-size: 26px;
+    }
+
     @media (min-width: 768px) {
-      font-size: 32px;
+      font-size: 34px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 42px;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 50px;
     }
   }
 
@@ -27,8 +53,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 15px;
-    padding: 10px;
+    margin: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
     color: inherit;
     text-decoration: none;
     font-weight: bold;
