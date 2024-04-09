@@ -1,15 +1,15 @@
 .aboutMeContainer {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
 
   @media (min-width: 768px) {
     align-items: center;
   }
 
   h1 {
-    margin: 10px 0;
-    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 34px;
 
     @media (min-width: 420px) {
       font-size: 42px;
@@ -31,7 +31,6 @@
   p {
     margin: 10px 0;
     text-align: start;
-    line-height: 1.25;
     text-wrap: balance;
 
     @media (min-width: 420px) {
@@ -53,73 +52,83 @@
     }
   }
 
-  .linkButton {
-    position: relative;
-    margin: 20px auto;
-    padding: 15px 30px;
-    background-color: var(--white-color);
-    text-decoration: none;
-    color: inherit;
-    transition: 0.5s;
-    border-radius: 10px;
+  .linkButtons {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
 
-    span {
+    .linkButton {
       position: relative;
-      z-index: 1;
-    }
+      margin: 20px 0;
+      padding: 15px 30px;
+      background-color: var(--white-color);
+      text-decoration: none;
+      font-size: 16px;
+      color: inherit;
+      transition: 0.5s;
+      border-radius: 10px;
 
-    i {
-      position: absolute;
-      inset: 0;
-      display: block;
+      span {
+        position: relative;
+        z-index: 1;
+      }
+
+      i {
+        position: absolute;
+        inset: 0;
+        display: block;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 80%;
+          width: 20px;
+          height: 5px;
+          background-color: var(--dark-grey-color);
+          transform: translateX(-50%) skewX(360deg);
+          transition: 0.5s;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 20%;
+          width: 20px;
+          height: 5px;
+          background-color: var(--dark-grey-color);
+          transform: translateX(-50%) skewX(360deg);
+          transition: 0.5s;
+        }
+      }
 
       &::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 80%;
-        width: 20px;
-        height: 5px;
+        inset: 2px;
         background-color: var(--dark-grey-color);
-        transform: translateX(-50%) skewX(360deg);
-        transition: 0.5s;
+        border-radius: 10px;
       }
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 20%;
-        width: 20px;
-        height: 5px;
-        background-color: var(--dark-grey-color);
-        transform: translateX(-50%) skewX(360deg);
-        transition: 0.5s;
-      }
-    }
+      @media (min-width: 1024px) {
+        &:hover {
+          background-color: var(--white-color);
+          box-shadow: -3px 0 0 var(--white-color), 3px 0 0 var(--white-color);
+          letter-spacing: 0.1em;
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 2px;
-      background-color: var(--dark-grey-color);
-      border-radius: 10px;
-    }
+          i::before {
+            width: 30px;
+            left: 20%;
+          }
 
-    @media (min-width: 1024px) {
-      &:hover {
-        background-color: var(--white-color);
-        box-shadow: -3px 0 0 var(--white-color), 3px 0 0 var(--white-color);
-        letter-spacing: 0.1em;
-
-        i::before {
-          width: 30px;
-          left: 20%;
-        }
-
-        i::after {
-          width: 30px;
-          left: 80%;
+          i::after {
+            width: 30px;
+            left: 80%;
+          }
         }
       }
     }
