@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./AboutMe.module.scss";
 import TechStack from "./components/TechStack/TechStack";
+import WantToLearn from "./components/WantToLearn/WantToLearn";
 
 const AboutMe = () => {
   const scrollToTopWithDelay = () => {
@@ -26,24 +27,27 @@ const AboutMe = () => {
           and ideas.
         </p>
         <p>Let&apos;s make something!</p>
-        <Link
-          className={styles.linkButton}
-          onClick={scrollToTopWithDelay}
-          to="/contact"
-        >
-          <span>CONTACT</span>
-          <i></i>
-        </Link>
-        <Link
-          className={styles.linkButton}
-          onClick={scrollToTopWithDelay}
-          to="/projects"
-        >
-          <span>PROJECTS</span>
-          <i></i>
-        </Link>
+        <div className={styles.linkButtons}>
+          <Link
+            className={styles.linkButton}
+            onClick={scrollToTopWithDelay}
+            to="/projects"
+          >
+            <span>PROJECTS</span>
+            <i></i>
+          </Link>
+          <Link
+            className={styles.linkButton}
+            onClick={scrollToTopWithDelay}
+            to="/contact"
+          >
+            <span>CONTACT</span>
+            <i></i>
+          </Link>
+        </div>
       </div>
       <TechStack />
+      <WantToLearn />
     </section>
   );
 };

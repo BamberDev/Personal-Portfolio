@@ -25,4 +25,16 @@ body {
   @media (min-width: 1440px) {
     max-width: 1400px;
   }
+
+  h1 {
+    line-height: 1;
+  }
+
+  h2 {
+    line-height: 1.25;
+  }
+
+  p {
+    line-height: 1.25;
+  }
 }
