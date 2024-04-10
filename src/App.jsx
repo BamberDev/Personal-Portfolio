@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
-import Projects from "./pages/ProjectsPage/Projects/Projects";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./animations/PageTransition/PageTransition";
 
@@ -34,19 +33,6 @@ const App = () => {
               <PageTransition key="contact">
                 <Navbar />
                 <ContactPage />
-                <Footer />
-              </PageTransition>
-            </AnimatePresence>
-          }
-        />
-
-        <Route
-          path="/projects"
-          element={
-            <AnimatePresence mode="wait">
-              <PageTransition key="projects">
-                <Navbar />
-                <Projects />
                 <Footer />
               </PageTransition>
             </AnimatePresence>
