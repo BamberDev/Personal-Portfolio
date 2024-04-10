@@ -1,13 +1,10 @@
 .toolContainer {
   display: flex;
   flex-direction: column;
-
-  @media (min-width: 768px) {
-    align-items: center;
-  }
+  align-items: center;
 
   h1 {
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
     font-size: 34px;
 
     @media (min-width: 420px) {
@@ -28,6 +25,7 @@
   }
 
   .toolList {
+    max-width: 800px;
     margin-top: 10px;
     background-color: var(--dark-grey-color);
     border-radius: 10px;

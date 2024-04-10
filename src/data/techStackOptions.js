@@ -5,6 +5,9 @@ import HtmlIcon from "./../assets/TechStackIcons/html.svg";
 import BootstrapIcon from "./../assets/TechStackIcons/bootstrap.svg";
 import GitIcon from "./../assets/TechStackIcons/git.svg";
 import SassIcon from "./../assets/TechStackIcons/sass.svg";
+import GSAPIcon from "./../assets/TechStackIcons/gsap.svg";
+import FramerMotionIcon from "./../assets/TechStackIcons/framer-motion.svg";
+import ViteIcon from "./../assets/TechStackIcons/vitejs.svg";
 
 export const techStackOptions = [
   {
@@ -42,6 +45,24 @@ export const techStackOptions = [
     icon: SassIcon,
     description: "SASS/SCSS",
     url: "https://sass-lang.com/",
+  },
+  {
+    alt: "GSAP icon",
+    icon: GSAPIcon,
+    description: "GSAP",
+    url: "https://gsap.com/",
+  },
+  {
+    alt: "Framer motion icon",
+    icon: FramerMotionIcon,
+    description: "FRAMER MOTION",
+    url: "https://www.framer.com/motion/",
+  },
+  {
+    alt: "Vite icon",
+    icon: ViteIcon,
+    description: "VITE",
+    url: "https://vitejs.dev/",
   },
   {
     alt: "Git icon",
