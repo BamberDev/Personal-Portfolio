@@ -27,24 +27,15 @@ const AboutMe = () => {
           and ideas.
         </p>
         <p>Let&apos;s make something!</p>
-        <div className={styles.linkButtons}>
-          <Link
-            className={styles.linkButton}
-            onClick={scrollToTopWithDelay}
-            to="/projects"
-          >
-            <span>PROJECTS</span>
-            <i></i>
-          </Link>
-          <Link
-            className={styles.linkButton}
-            onClick={scrollToTopWithDelay}
-            to="/contact"
-          >
-            <span>CONTACT</span>
-            <i></i>
-          </Link>
-        </div>
+
+        <Link
+          className={styles.contactButton}
+          onClick={scrollToTopWithDelay}
+          to="/contact"
+        >
+          <span>CONTACT</span>
+          <i></i>
+        </Link>
       </div>
       <TechStack />
       <WantToLearn />
