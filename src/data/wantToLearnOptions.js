@@ -1,7 +1,6 @@
 import NextIcon from "./../assets/WantToLearnIcons/nextjs.svg";
 import TypeScriptIcon from "./../assets/WantToLearnIcons/typescript.svg";
 import TailwindIcon from "./../assets/WantToLearnIcons/tailwind.svg";
-import GSAPIcon from "./../assets/WantToLearnIcons/gsap.svg";
 import NodeIcon from "./../assets/WantToLearnIcons/nodejs.svg";
 import MongoDBIcon from "./../assets/WantToLearnIcons/mongodb.svg";
 
@@ -24,12 +23,7 @@ export const wantToLearnOptions = [
     description: "TAILWIND",
     url: "https://tailwindcss.com/",
   },
-  {
-    alt: "GSAP icon",
-    icon: GSAPIcon,
-    description: "GSAP",
-    url: "https://gsap.com/",
-  },
+
   {
     alt: "NodeJS icon",
     icon: NodeIcon,
