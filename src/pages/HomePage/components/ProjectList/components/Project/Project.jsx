@@ -6,6 +6,12 @@ import { useEffect, useState } from "react";
 const Project = ({ index, title, description, path, alt, src, setModal }) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
+  const handleScrollTop = () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1000);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setViewportWidth(window.innerWidth);
@@ -28,7 +34,7 @@ const Project = ({ index, title, description, path, alt, src, setModal }) => {
       }}
       className={styles.project}
     >
-      <Link to={path}>
+      <Link to={path} onClick={handleScrollTop}>
         {viewportWidth < 1024 && (
           <div className={styles.imageContainer}>
             <img src={src} alt={alt} />
