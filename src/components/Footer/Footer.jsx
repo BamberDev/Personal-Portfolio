@@ -22,7 +22,15 @@ const Footer = () => {
   const handleNavbarItemClick = () => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 500);
+    }, 1000);
+  };
+
+  const handleSmoothScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -33,7 +41,11 @@ const Footer = () => {
             {filteredNavbarOptions.map((option) => (
               <li key={nanoid()}>
                 {option.isScroll ? (
-                  <a className={styles.navbarItem} href={option.path}>
+                  <a
+                    className={styles.navbarItem}
+                    onClick={(e) => handleSmoothScroll(e, option.path)}
+                    href={option.path}
+                  >
                     {option.name}
                   </a>
                 ) : (
@@ -52,9 +64,9 @@ const Footer = () => {
         </div>
         <div className={styles.footerLinks}>
           <div>
-            <Link to="/">
+            <a href="/">
               <img src={logo} alt="Logo" />
-            </Link>
+            </a>
           </div>
           <div>
             <ul className={styles.socials}>
