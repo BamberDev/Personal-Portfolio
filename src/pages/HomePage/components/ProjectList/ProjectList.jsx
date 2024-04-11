@@ -23,7 +23,7 @@ const ProjectList = () => {
 
   return (
     <section className={clsx("container", styles.projectContainer)}>
-      <div className={styles.projectContent}>
+      <div id="projects" className={styles.projectContent}>
         <h1>PROJECTS</h1>
         {projects.map((project, index) => {
           return (
