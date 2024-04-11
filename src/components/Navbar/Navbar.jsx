@@ -44,7 +44,7 @@ const Navbar = () => {
   const handleNavbarItemClick = () => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 500);
+    }, 1000);
   };
 
   const filteredNavbarOptions = navbarOptions.filter((option) => {
@@ -70,9 +70,9 @@ const Navbar = () => {
     <nav className={clsx(styles.navbarContainer, !visible && styles.hidden)}>
       <div className={clsx("container", styles.navbarContent)}>
         <div>
-          <Link to="/">
+          <a href="/">
             <img src={logo} alt="My own logo - KC" />
-          </Link>
+          </a>
         </div>
         <div className={clsx(styles.menu, showMenu && styles.showMenu)}>
           <ul className={styles.navbarLinks}>
