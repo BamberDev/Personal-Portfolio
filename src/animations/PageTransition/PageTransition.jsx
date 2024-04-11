@@ -10,7 +10,7 @@ const PageTransition = ({ children }) => {
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}
-        transition={{ duration: 1, ease: [0.25, 1, 0.25, 1] }}
+        transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
       />
 
       {children}
@@ -20,7 +20,7 @@ const PageTransition = ({ children }) => {
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}
-        transition={{ duration: 1, ease: [0.25, 1, 0.25, 1] }}
+        transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
       />
     </>
   );
