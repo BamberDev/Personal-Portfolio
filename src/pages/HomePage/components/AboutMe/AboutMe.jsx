@@ -7,7 +7,7 @@ const AboutMe = () => {
   const scrollToTopWithDelay = () => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 500);
+    }, 1000);
   };
 
   return (

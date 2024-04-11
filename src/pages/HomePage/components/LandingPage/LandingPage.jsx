@@ -2,7 +2,14 @@ import styles from "./LandingPage.module.scss";
 import videoSource from "../../../../assets/background-video.mp4";
 import clsx from "clsx";
 import { MdKeyboardArrowDown } from "react-icons/md";
+
 const LandingPage = () => {
+  const scrollToAbout = (e) => {
+    e.preventDefault();
+    const aboutSection = document.getElementById("about");
+    aboutSection.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className={styles.videoContainer}>
       <video
@@ -25,7 +32,9 @@ const LandingPage = () => {
           <span>I build pixel-perfect, user-friendly</span>
           and immersive digital experiences.
         </p>
-        <MdKeyboardArrowDown />
+        <a href="#about" onClick={scrollToAbout}>
+          <MdKeyboardArrowDown />
+        </a>
       </div>
     </section>
   );

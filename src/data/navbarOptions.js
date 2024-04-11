@@ -9,7 +9,8 @@ export const navbarOptions = [
   },
   {
     name: "PROJECTS",
-    path: "/projects",
+    path: "#projects",
+    isScroll: true,
     showOnContact: true,
     showOnHome: true,
     showOnProjects: false,
