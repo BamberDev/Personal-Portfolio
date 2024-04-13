@@ -12,8 +12,11 @@ import PersonalWebsitePage from "./pages/ProjectPages/PersonalWebsitePage/Person
 import ExpenseTrackerPage from "./pages/ProjectPages/ExpenseTrackerPage/ExpenseTrackerPage";
 import UrlShortenerPage from "./pages/ProjectPages/UrlShortenerPage/UrlShortenerPage";
 import CurrencyConverterPage from "./pages/ProjectPages/CurrencyConverterPage/CurrencyConverterPage";
+import { useState } from "react";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <Router>
       <Routes>
@@ -23,7 +26,7 @@ const App = () => {
             <AnimatePresence initial={false} mode="wait">
               <PageTransition key="home">
                 <Navbar />
-                <HomePage />
+                <HomePage isLoading={isLoading} setIsLoading={setIsLoading} />
                 <ScrollToTopButton />
                 <Footer />
               </PageTransition>
