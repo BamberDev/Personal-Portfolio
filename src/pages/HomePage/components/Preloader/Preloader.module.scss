@@ -1,0 +1,22 @@
+.preloader {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-grey-color);
+  color: var(--white-color);
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 300px);
+
+    path {
+      fill: var(--dark-grey-color);
+    }
+  }
+}
