@@ -51,8 +51,6 @@ const Navbar = () => {
     switch (location.pathname) {
       case "/":
         return option.showOnHome;
-      case "/projects":
-        return option.showOnProjects;
       case "/contact":
         return option.showOnContact;
     }
