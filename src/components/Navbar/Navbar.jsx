@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { nanoid } from "nanoid";
 import { navbarOptions } from "../../data/navbarOptions";
-import logo from "../../assets/KC-logo.png";
+import logo from "../../assets/Logo_KC_Lato.svg";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
