@@ -85,7 +85,8 @@
       img {
         height: 60px;
         width: 60px;
-        border-radius: 5px;
+        border-radius: 20%;
+        border: 2px solid var(--white-color);
       }
 
       .socials {
