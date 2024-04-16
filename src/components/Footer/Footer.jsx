@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styles from "./Footer.module.scss";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import logo from "./../../assets/KC-logo.png";
+import logo from "./../../assets/Logo_KC_Lato.svg";
 import { Link, useLocation } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { navbarOptions } from "../../data/navbarOptions";
