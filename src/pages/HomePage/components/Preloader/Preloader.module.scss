@@ -1,7 +1,6 @@
 .preloader {
   height: 100vh;
   width: 100vw;
-  background-color: var(--dark-grey-color);
   color: var(--white-color);
   position: fixed;
   z-index: 100;
@@ -9,14 +8,40 @@
   align-items: center;
   justify-content: center;
 
-  svg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: calc(100% + 300px);
+  .logo {
+    border: 2px solid var(--white-color);
+    border-radius: 20%;
+    z-index: 200;
+    width: 300px;
+    height: 300px;
+    stroke: var(--white-color);
+    fill-opacity: 0;
+    stroke-width: 1px;
+    stroke-dasharray: 750;
+    stroke-dashoffset: 750;
+    animation: draw 3s linear forwards;
+    transform-origin: center;
+  }
 
-    path {
-      fill: var(--dark-grey-color);
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 750;
+      transform: scale(1);
     }
+    100% {
+      stroke-dashoffset: 0;
+      transform: scale(2) rotate(15deg);
+    }
+  }
+}
+
+.curve {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% + 300px);
+
+  path {
+    fill: var(--dark-grey-color);
   }
 }

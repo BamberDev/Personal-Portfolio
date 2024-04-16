@@ -1,8 +1,17 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import styles from "./PageTransition.module.scss";
+import { useEffect } from "react";
 
 const PageTransition = ({ children }) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      document.body.style.cursor = "default";
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <motion.div
