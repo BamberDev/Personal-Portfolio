@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import AboutMe from "./components/AboutMe/AboutMe";
 import LandingPage from "./components/LandingPage/LandingPage";
@@ -7,12 +7,19 @@ import Preloader from "./components/Preloader/Preloader";
 import { AnimatePresence } from "framer-motion";
 
 const HomePage = ({ isLoading, setIsLoading }) => {
+  const [animationStarted, setAnimationStarted] = useState(false);
+  useEffect(() => {
+    if (!animationStarted && !isLoading) {
+      setAnimationStarted(true);
+    }
+  }, [animationStarted, isLoading]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.style.cursor = "default";
       window.scrollTo(0, 0);
-    }, 1500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [setIsLoading]);
@@ -22,7 +29,7 @@ const HomePage = ({ isLoading, setIsLoading }) => {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <LandingPage />
+      <LandingPage animationStarted={animationStarted} />
       <AboutMe />
       <ProjectList />
     </div>
