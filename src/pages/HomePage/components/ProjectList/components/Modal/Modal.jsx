@@ -115,7 +115,7 @@ const Modal = ({ modal, projects }) => {
         initial="initial"
         animate={active ? "openCursor" : "closedCursor"}
       >
-        READ MORE
+        VIEW
       </motion.div>
     </>
   );
