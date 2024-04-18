@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import styles from "./TechStack.module.scss";
 import { techStackOptions } from "../../../../../../data/techStackOptions";
+import MagneticHover from "../../../../../../animations/MagneticHover/MagneticHover";
 
 const TechStack = () => {
   return (
@@ -10,7 +11,9 @@ const TechStack = () => {
         {techStackOptions.map((option) => (
           <div className={styles.toolCard} key={nanoid()}>
             <a href={option.url} target="_blank" rel="noopener noreferrer">
-              <img src={option.icon} alt={option.alt} />
+              <MagneticHover>
+                <img src={option.icon} alt={option.alt} />
+              </MagneticHover>
             </a>
             <p>{option.description}</p>
           </div>

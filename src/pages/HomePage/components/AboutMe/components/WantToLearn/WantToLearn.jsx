@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import styles from "./WantToLearn.module.scss";
 import { wantToLearnOptions } from "../../../../../../data/wantToLearnOptions";
+import MagneticHover from "../../../../../../animations/MagneticHover/MagneticHover";
 
 const WantToLearn = () => {
   return (
@@ -10,7 +11,9 @@ const WantToLearn = () => {
         {wantToLearnOptions.map((option) => (
           <div className={styles.toLearnCard} key={nanoid()}>
             <a href={option.url} target="_blank" rel="noopener noreferrer">
-              <img src={option.icon} alt={option.alt} />
+              <MagneticHover>
+                <img src={option.icon} alt={option.alt} />
+              </MagneticHover>
             </a>
             <p>{option.description}</p>
           </div>

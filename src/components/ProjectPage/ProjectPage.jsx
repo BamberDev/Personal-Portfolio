@@ -3,6 +3,7 @@ import styles from "./ProjectPage.module.scss";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { FaArrowRotateLeft } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const ProjectPage = ({ src, alt, code, demo, title, techStack, content }) => {
   const handleHomeClick = () => {
@@ -13,7 +14,17 @@ const ProjectPage = ({ src, alt, code, demo, title, techStack, content }) => {
 
   return (
     <div className="container">
-      <div className={styles.pageContainer}>
+      <motion.div
+        initial={{ opacity: 0, y: 150 }}
+        animate={{ opacity: 1, y: 0, scale: [0.6, 1.2, 1] }}
+        transition={{
+          duration: 1.5,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 100,
+        }}
+        className={styles.pageContainer}
+      >
         <img src={src} alt={alt} />
         <div className={styles.pageLinks}>
           <a href={code} target="_blank" rel="noopener noreferrer">
@@ -35,7 +46,7 @@ const ProjectPage = ({ src, alt, code, demo, title, techStack, content }) => {
           <i></i>
           <FaArrowRotateLeft />
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };

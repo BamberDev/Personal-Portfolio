@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import styles from "./ContactForm.module.scss";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const form = useRef();
@@ -49,7 +50,17 @@ const ContactForm = () => {
 
   return (
     <section className="container">
-      <div className={styles.contactContainer}>
+      <motion.div
+        initial={{ opacity: 0, y: 150 }}
+        animate={{ opacity: 1, y: 0, scale: [0.6, 1.2, 1] }}
+        transition={{
+          duration: 1.5,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 100,
+        }}
+        className={styles.contactContainer}
+      >
         <div className={styles.contactInfo}>
           {alertMessage && <p className={styles.alert}>{alertMessage}</p>}
           {loading && <p className={styles.loader}>Sending...</p>}
@@ -115,7 +126,7 @@ const ContactForm = () => {
             </p>
           </div>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };
