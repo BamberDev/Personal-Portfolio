@@ -5,6 +5,7 @@ import logo from "./../../assets/Logo_KC_Lato.svg";
 import { Link, useLocation } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { navbarOptions } from "../../data/navbarOptions";
+import MagneticHover from "../../animations/MagneticHover/MagneticHover";
 const Footer = () => {
   const location = useLocation();
 
@@ -65,7 +66,9 @@ const Footer = () => {
         <div className={styles.footerLinks}>
           <div>
             <a href="/">
-              <img src={logo} alt="Logo" />
+              <MagneticHover>
+                <img src={logo} alt="Logo" />
+              </MagneticHover>
             </a>
           </div>
           <div>
