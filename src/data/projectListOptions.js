@@ -12,8 +12,8 @@ const projects = [
     description: "HTML CSS JS",
     path: "/space-invaders",
     alt: "Image of my space invaders project",
-    code: "",
-    demo: "",
+    code: "https://github.com/BamberDev/Space-Invaders-JS",
+    demo: "https://spaceinvadersjs.netlify.app/",
     techStack: "HTML, CSS, JS",
   },
   {
@@ -23,8 +23,8 @@ const projects = [
     description: "REACT CSS/SCSS JS",
     path: "/personal-website",
     alt: "Image of my personal website landing page",
-    code: "",
-    demo: "",
+    code: "https://github.com/BamberDev/Personal-Portfolio",
+    demo: "https://portfolio-kc-v1.netlify.app/",
     techStack: "HTML, CSS/SCSS, JS, REACT, EMAILJS, FRAMER MOTION, GSAP, VITE",
   },
   {
@@ -45,8 +45,8 @@ const projects = [
     description: "REACT CSS/SCSS JS",
     path: "/url-shortener",
     alt: "Image of my url shortener project",
-    code: "/url-shortener",
-    demo: "",
+    code: "https://github.com/BamberDev/React-URL-Shortener",
+    demo: "https://celadon-trifle-0b0c58.netlify.app/",
     techStack: "HTML CSS/SCSS, JS, REACT, RESTful API, VITE",
   },
   {
