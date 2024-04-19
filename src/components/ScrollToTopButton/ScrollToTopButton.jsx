@@ -27,6 +27,7 @@ const ScrollToTopButton = () => {
     <button
       className={clsx(styles.scrollToTop, { [styles.visible]: isVisible })}
       onClick={scrollToTop}
+      aria-label="Scroll to top button"
     >
       <FaArrowUp />
     </button>

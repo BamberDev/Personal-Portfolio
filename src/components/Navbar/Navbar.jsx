@@ -69,7 +69,7 @@ const Navbar = () => {
     <nav className={clsx(styles.navbarContainer, !visible && styles.hidden)}>
       <div className={clsx("container", styles.navbarContent)}>
         <div>
-          <a href="/">
+          <a href="/" aria-label="Logo with a link to my website">
             <MagneticHover>
               <img src={logo} alt="My own logo - KC" />
             </MagneticHover>
@@ -87,6 +87,7 @@ const Navbar = () => {
                       handleSmoothScroll(e, option.path);
                     }}
                     href={option.path}
+                    aria-label="Navbar item"
                   >
                     {option.name}
                   </a>
@@ -98,6 +99,7 @@ const Navbar = () => {
                       handleNavbarItemClick();
                     }}
                     to={option.path}
+                    aria-label="Navbar item"
                   >
                     {option.name}
                   </Link>

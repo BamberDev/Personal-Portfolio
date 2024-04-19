@@ -34,7 +34,7 @@ const Project = ({ index, title, description, path, alt, src, setModal }) => {
       }}
       className={styles.project}
     >
-      <Link to={path} onClick={handleScrollTop}>
+      <Link to={path} onClick={handleScrollTop} aria-label="Link to a project">
         {viewportWidth < 1024 && (
           <div className={styles.imageContainer}>
             <img src={src} alt={alt} />

@@ -24,7 +24,8 @@ const AboutMe = () => {
   const translateHeader = useTransform(textScrollYProgress, [0, 1], [75, 0]);
   const translateFirstP = useTransform(textScrollYProgress, [0, 1], [100, 0]);
   const translateSecondP = useTransform(textScrollYProgress, [0, 1], [200, 0]);
-  const translateThirdP = useTransform(textScrollYProgress, [0, 1], [300, 0]);
+  const translateThirdP = useTransform(textScrollYProgress, [0, 1], [250, 0]);
+  const translateButton = useTransform(textScrollYProgress, [0, 1], [150, 0]);
   const opacity = useTransform(textScrollYProgress, [0, 1], [0, 1]);
 
   const scrollToTopWithDelay = () => {
@@ -57,14 +58,17 @@ const AboutMe = () => {
           <motion.p style={{ y: translateThirdP }}>
             Let&apos;s make something!
           </motion.p>
-          <Link
-            className={styles.contactButton}
-            onClick={scrollToTopWithDelay}
-            to="/contact"
-          >
-            <span>CONTACT</span>
-            <i></i>
-          </Link>
+          <motion.div style={{ y: translateButton }}>
+            <Link
+              className={styles.contactButton}
+              onClick={scrollToTopWithDelay}
+              to="/contact"
+              aria-label="Link to contact page"
+            >
+              <span>CONTACT</span>
+              <i></i>
+            </Link>
+          </motion.div>
         </div>
       </motion.div>
       <div className={styles.cardContainer} ref={card}>
