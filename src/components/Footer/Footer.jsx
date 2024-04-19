@@ -46,6 +46,7 @@ const Footer = () => {
                     className={styles.navbarItem}
                     onClick={(e) => handleSmoothScroll(e, option.path)}
                     href={option.path}
+                    aria-label="Navbar item"
                   >
                     {option.name}
                   </a>
@@ -54,6 +55,7 @@ const Footer = () => {
                     className={styles.navbarItem}
                     onClick={handleNavbarItemClick}
                     to={option.path}
+                    aria-label="Navbar item"
                   >
                     {option.name}
                   </Link>
@@ -65,9 +67,9 @@ const Footer = () => {
         </div>
         <div className={styles.footerLinks}>
           <div>
-            <a href="/">
+            <a href="/" aria-label="Logo with a link to my website">
               <MagneticHover>
-                <img src={logo} alt="Logo" />
+                <img src={logo} alt="My own logo - KC" />
               </MagneticHover>
             </a>
           </div>
@@ -78,6 +80,7 @@ const Footer = () => {
                   href="https://github.com/BamberDev"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Github link"
                 >
                   <FaGithub />
                   Github
@@ -88,6 +91,7 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/kevin-cie%C5%9Blik-67b393282/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Linkedin link"
                 >
                   <FaLinkedin />
                   Linkedin
