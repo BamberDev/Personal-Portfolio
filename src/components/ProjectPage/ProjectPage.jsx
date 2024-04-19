@@ -27,10 +27,20 @@ const ProjectPage = ({ src, alt, code, demo, title, techStack, content }) => {
       >
         <img src={src} alt={alt} />
         <div className={styles.pageLinks}>
-          <a href={code} target="_blank" rel="noopener noreferrer">
+          <a
+            href={code}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to project code"
+          >
             CODE <MdArrowOutward />
           </a>
-          <a href={demo} target="_blank" rel="noopener noreferrer">
+          <a
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to project demo"
+          >
             DEMO <MdArrowOutward />
           </a>
         </div>
@@ -41,7 +51,12 @@ const ProjectPage = ({ src, alt, code, demo, title, techStack, content }) => {
           <h2>ABOUT PROJECT</h2>
           {content}
         </div>
-        <Link to="/" className={styles.homeButton} onClick={handleHomeClick}>
+        <Link
+          to="/"
+          className={styles.homeButton}
+          onClick={handleHomeClick}
+          aria-label="Go back home button"
+        >
           <span>GO BACK HOME</span>
           <i></i>
           <FaArrowRotateLeft />
