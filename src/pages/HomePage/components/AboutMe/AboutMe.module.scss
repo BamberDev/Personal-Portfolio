@@ -1,13 +1,26 @@
 .aboutMeContainer {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  position: sticky;
+  top: -10%;
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--white-color);
+    padding: 30px 0;
+  }
 
   h1 {
-    margin-top: 30px;
     margin-bottom: 20px;
-    font-size: 34px;
+    font-size: 32px;
 
     @media (min-width: 420px) {
       font-size: 42px;
@@ -51,7 +64,7 @@
   .contactButton {
     display: flex;
     position: relative;
-    margin: 20px 0;
+    margin-top: 20px;
     padding: 15px 30px;
     background-color: var(--white-color);
     text-decoration: none;
@@ -120,5 +133,27 @@
         }
       }
     }
+  }
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  border: 2px solid var(--white-color);
+  background-color: var(--dark-grey-color);
+  border-radius: 10px;
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  @media (min-width: 2560px) {
+    height: 1200px;
   }
 }

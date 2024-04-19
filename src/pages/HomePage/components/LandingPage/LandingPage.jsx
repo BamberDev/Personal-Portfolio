@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import PropTypes from "prop-types";
+import LocomotiveScroll from "locomotive-scroll";
 
 const LandingPage = ({ animationStarted }) => {
   const topHeadingRef = useRef(null);
@@ -12,6 +13,7 @@ const LandingPage = ({ animationStarted }) => {
   const h2Ref = useRef(null);
   const topParagraphRef = useRef(null);
   const bottomParagraphRef = useRef(null);
+  const landingPage = useRef(null);
 
   const landingPageContainer = document.querySelector(
     `.${styles.landingPageContainer}`
@@ -19,6 +21,11 @@ const LandingPage = ({ animationStarted }) => {
 
   useEffect(() => {
     if (animationStarted) {
+      const scroll = new LocomotiveScroll({
+        el: landingPageContainer.current,
+        smooth: true,
+      });
+
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.from(landingPageContainer, {
         opacity: 0,
@@ -68,6 +75,7 @@ const LandingPage = ({ animationStarted }) => {
 
       return () => {
         tl.kill();
+        scroll.destroy();
       };
     }
   }, [animationStarted, landingPageContainer]);
@@ -79,7 +87,7 @@ const LandingPage = ({ animationStarted }) => {
   };
 
   return (
-    <section className={styles.videoContainer}>
+    <section className={styles.videoContainer} ref={landingPage}>
       <video
         autoPlay
         loop
@@ -91,7 +99,7 @@ const LandingPage = ({ animationStarted }) => {
         Your browser does not support the video tag.
       </video>
       <div className={clsx("container", styles.landingPageContainer)}>
-        <h1>
+        <h1 data-scroll data-scroll-speed="0.2">
           <span className={styles.topHeading} ref={topHeadingRef}>
             HI THERE,
           </span>
@@ -99,10 +107,10 @@ const LandingPage = ({ animationStarted }) => {
             I&apos;M KEVIN.
           </span>
         </h1>
-        <h2 ref={h2Ref}>
+        <h2 ref={h2Ref} data-scroll data-scroll-speed="0.3">
           <span>FRONTEND DEVELOPER</span>
         </h2>
-        <p>
+        <p data-scroll data-scroll-speed="0.3">
           <span ref={topParagraphRef}>
             I build pixel-perfect, user-friendly
           </span>
