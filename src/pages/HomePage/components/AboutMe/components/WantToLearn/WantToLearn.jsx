@@ -10,7 +10,12 @@ const WantToLearn = () => {
       <div className={styles.toLearnList}>
         {wantToLearnOptions.map((option) => (
           <div className={styles.toLearnCard} key={nanoid()}>
-            <a href={option.url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={option.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to tool page"
+            >
               <MagneticHover>
                 <img src={option.icon} alt={option.alt} />
               </MagneticHover>
