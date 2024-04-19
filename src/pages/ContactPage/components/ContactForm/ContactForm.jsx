@@ -68,7 +68,11 @@ const ContactForm = () => {
           <p>
             Feel free to get in touch using the form below or email me directly
             at{" "}
-            <a href="mailto:kabaczek99@gmail.com" target="_blank">
+            <a
+              href="mailto:kabaczek99@gmail.com"
+              target="_blank"
+              aria-label="My email address"
+            >
               kabaczek99@gmail.com
             </a>
           </p>
@@ -109,7 +113,11 @@ const ContactForm = () => {
                 aria-required="true"
                 required
               />
-              <button className={styles.submitButton} type="submit">
+              <button
+                className={styles.submitButton}
+                type="submit"
+                aria-label="Submit form button"
+              >
                 <span>SEND</span>
                 <i></i>
               </button>
