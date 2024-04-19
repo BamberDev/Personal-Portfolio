@@ -18,9 +18,9 @@ const HomePage = ({ isLoading, setIsLoading }) => {
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.style.cursor = "default";
-      window.scrollTo(0, 0);
     }, 2000);
 
+    window.scrollTo(0, 0);
     return () => clearTimeout(timer);
   }, [setIsLoading]);
 
