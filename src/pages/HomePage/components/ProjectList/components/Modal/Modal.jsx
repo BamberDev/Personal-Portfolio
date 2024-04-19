@@ -95,7 +95,7 @@ const Modal = ({ modal, projects }) => {
                 style={{ backgroundColor: color }}
                 className={styles.modal}
               >
-                <img src={src} alt="image of a project" />
+                <img src={src} alt="Image of a project" />
               </div>
             );
           })}
