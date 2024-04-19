@@ -8,6 +8,8 @@ import SassIcon from "./../assets/TechStackIcons/sass.svg";
 import GSAPIcon from "./../assets/TechStackIcons/gsap.svg";
 import FramerMotionIcon from "./../assets/TechStackIcons/framer-motion.svg";
 import ViteIcon from "./../assets/TechStackIcons/vitejs.svg";
+import FigmaIcon from "./../assets/TechStackIcons/figma.svg";
+import NetlifyIcon from "./../assets/TechStackIcons/netlify.svg";
 
 export const techStackOptions = [
   {
@@ -69,5 +71,17 @@ export const techStackOptions = [
     icon: GitIcon,
     description: "GIT",
     url: "https://git-scm.com/",
+  },
+  {
+    alt: "Figma icon",
+    icon: FigmaIcon,
+    description: "FIGMA",
+    url: "https://www.figma.com/",
+  },
+  {
+    alt: "Netlify icon",
+    icon: NetlifyIcon,
+    description: "NETLIFY",
+    url: "https://www.netlify.com/",
   },
 ];
