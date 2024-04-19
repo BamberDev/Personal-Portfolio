@@ -118,7 +118,11 @@ const LandingPage = ({ animationStarted }) => {
             and immersive digital experiences.
           </span>
         </p>
-        <a href="#about" onClick={scrollToAbout}>
+        <a
+          href="#about"
+          onClick={scrollToAbout}
+          aria-label="Scroll down to about me section"
+        >
           <MdKeyboardArrowDown />
         </a>
       </div>
