@@ -10,6 +10,7 @@ import FramerMotionIcon from "./../assets/TechStackIcons/framer-motion.svg";
 import ViteIcon from "./../assets/TechStackIcons/vitejs.svg";
 import FigmaIcon from "./../assets/TechStackIcons/figma.svg";
 import NetlifyIcon from "./../assets/TechStackIcons/netlify.svg";
+import LighthouseIcon from "./../assets/TechStackIcons/lighthouse.svg";
 
 export const techStackOptions = [
   {
@@ -83,5 +84,11 @@ export const techStackOptions = [
     icon: NetlifyIcon,
     description: "NETLIFY",
     url: "https://www.netlify.com/",
+  },
+  {
+    alt: "Lighthouse icon",
+    icon: LighthouseIcon,
+    description: "LIGHTHOUSE",
+    url: "https://developer.chrome.com/docs/lighthouse/overview/",
   },
 ];
