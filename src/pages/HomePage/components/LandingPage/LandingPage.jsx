@@ -1,4 +1,5 @@
 import styles from "./LandingPage.module.scss";
+import videoSource from "../../../../assets/background-video.mp4";
 import clsx from "clsx";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useEffect, useRef } from "react";
@@ -96,10 +97,7 @@ const LandingPage = ({ animationStarted }) => {
         title="Background video showing grey triangles"
         className={styles.video}
       >
-        <source
-          src="https://cdn.pixabay.com/video/2017/12/20/13494-248644907.mp4"
-          type="video/mp4"
-        />
+        <source src={videoSource} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className={clsx("container", styles.landingPageContainer)}>
