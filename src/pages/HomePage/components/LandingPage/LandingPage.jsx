@@ -1,84 +1,62 @@
 import styles from "./LandingPage.module.scss";
 import videoSource from "../../../../assets/background-video.mp4";
+import backgroundImage from "./../../../../assets/BackgroundImage.png";
 import clsx from "clsx";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PropTypes from "prop-types";
 import LocomotiveScroll from "locomotive-scroll";
 
 const LandingPage = ({ animationStarted }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const topHeadingRef = useRef(null);
   const bottomHeadingRef = useRef(null);
   const h2Ref = useRef(null);
   const topParagraphRef = useRef(null);
   const bottomParagraphRef = useRef(null);
-  const landingPage = useRef(null);
+  const containerRef = useRef(null);
 
-  const landingPageContainer = document.querySelector(
-    `.${styles.landingPageContainer}`
-  );
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (animationStarted) {
       const scroll = new LocomotiveScroll({
-        el: landingPageContainer.current,
+        el: containerRef.current,
         smooth: true,
       });
 
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.from(landingPageContainer, {
+      tl.from(containerRef.current, {
         opacity: 0,
         duration: 0.5,
-      })
-        .from(bottomParagraphRef.current, {
-          y: 100,
-          opacity: 0,
-          stagger: 0.5,
-        })
-        .from(
+      }).from(
+        [
+          bottomParagraphRef.current,
           topParagraphRef.current,
-          {
-            y: 100,
-            opacity: 0,
-            stagger: 0.5,
-          },
-          "-=0.4"
-        )
-        .from(
           h2Ref.current,
-          {
-            y: 100,
-            opacity: 0,
-            stagger: 0.5,
-          },
-          "-=0.4"
-        )
-        .from(
           bottomHeadingRef.current,
-          {
-            y: 100,
-            opacity: 0,
-            stagger: 0.5,
-          },
-          "-=0.4"
-        )
-        .from(
           topHeadingRef.current,
-          {
-            y: 100,
-            opacity: 0,
-            stagger: 0.5,
-          },
-          "-=0.4"
-        );
+        ],
+        { y: 100, opacity: 0, stagger: 0.15 }
+      );
 
       return () => {
         tl.kill();
         scroll.destroy();
       };
     }
-  }, [animationStarted, landingPageContainer]);
+  }, [animationStarted]);
 
   const scrollToAbout = (e) => {
     e.preventDefault();
@@ -87,20 +65,31 @@ const LandingPage = ({ animationStarted }) => {
   };
 
   return (
-    <section className={styles.videoContainer} ref={landingPage}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        alt="Background video showing grey triangles"
-        title="Background video showing grey triangles"
-        className={styles.video}
+    <section className={styles.videoContainer}>
+      {windowWidth >= 1024 ? (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          alt="Background video showing grey triangles"
+          title="Background video showing grey triangles"
+          className={styles.video}
+        >
+          <source src={videoSource} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        <img
+          src={backgroundImage}
+          alt="Background image showing grey triangles"
+          className={styles.backgroundImage}
+        />
+      )}
+      <div
+        className={clsx("container", styles.landingPageContainer)}
+        ref={containerRef}
       >
-        <source src={videoSource} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className={clsx("container", styles.landingPageContainer)}>
         <h1 data-scroll data-scroll-speed="0.2">
           <span className={styles.topHeading} ref={topHeadingRef}>
             HI THERE,
