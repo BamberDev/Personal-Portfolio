@@ -1,6 +1,5 @@
 import styles from "./LandingPage.module.scss";
-import videoSource from "../../../../assets/background-video.mp4";
-import backgroundImage from "./../../../../assets/BackgroundImage.png";
+import videoSource from "../../../../assets/backgroundVideo.webm";
 import clsx from "clsx";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useEffect, useRef, useState } from "react";
@@ -66,26 +65,19 @@ const LandingPage = ({ animationStarted }) => {
 
   return (
     <section className={styles.videoContainer}>
-      {windowWidth >= 1024 ? (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          alt="Background video showing grey triangles"
-          title="Background video showing grey triangles"
-          className={styles.video}
-        >
-          <source src={videoSource} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      ) : (
-        <img
-          src={backgroundImage}
-          alt="Background image showing grey triangles"
-          className={styles.backgroundImage}
-        />
-      )}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        alt="Background video showing grey triangles"
+        title="Background video showing grey triangles"
+        className={styles.video}
+      >
+        <source src={videoSource} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <div
         className={clsx("container", styles.landingPageContainer)}
         ref={containerRef}
