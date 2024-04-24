@@ -2,31 +2,18 @@ import styles from "./LandingPage.module.scss";
 import videoSource from "../../../../assets/backgroundVideo.webm";
 import clsx from "clsx";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import PropTypes from "prop-types";
 import LocomotiveScroll from "locomotive-scroll";
 
 const LandingPage = ({ animationStarted }) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const topHeadingRef = useRef(null);
   const bottomHeadingRef = useRef(null);
   const h2Ref = useRef(null);
   const topParagraphRef = useRef(null);
   const bottomParagraphRef = useRef(null);
   const containerRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   useEffect(() => {
     if (animationStarted) {
@@ -77,7 +64,6 @@ const LandingPage = ({ animationStarted }) => {
         <source src={videoSource} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
       <div
         className={clsx("container", styles.landingPageContainer)}
         ref={containerRef}
