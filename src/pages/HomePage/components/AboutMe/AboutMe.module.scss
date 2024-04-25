@@ -8,6 +8,14 @@
   position: sticky;
   top: -10%;
 
+  @media (min-width: 768px) {
+    top: 0;
+  }
+
+  @media (min-width: 1440px) {
+    top: -10%;
+  }
+
   .textContainer {
     display: flex;
     flex-direction: column;
@@ -44,20 +52,20 @@
     text-wrap: balance;
 
     @media (min-width: 420px) {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     @media (min-width: 768px) {
-      font-size: 22px;
+      font-size: 20px;
       max-width: 70%;
     }
 
     @media (min-width: 1024px) {
-      font-size: 28px;
+      font-size: 24px;
     }
 
     @media (min-width: 1440px) {
-      font-size: 32px;
+      font-size: 28px;
     }
   }
 

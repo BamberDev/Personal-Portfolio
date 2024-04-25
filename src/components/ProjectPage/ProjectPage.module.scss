@@ -31,22 +31,22 @@
 
   h2 {
     margin: 20px;
-    font-size: 24px;
+    font-size: 20px;
 
     @media (min-width: 420px) {
-      font-size: 30px;
+      font-size: 26px;
     }
 
     @media (min-width: 768px) {
-      font-size: 38px;
+      font-size: 34px;
     }
 
     @media (min-width: 1024px) {
-      font-size: 46px;
+      font-size: 42px;
     }
 
     @media (min-width: 1440px) {
-      font-size: 54px;
+      font-size: 50px;
     }
   }
 
@@ -55,20 +55,20 @@
     margin: 0 auto;
 
     @media (min-width: 420px) {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     @media (min-width: 768px) {
-      font-size: 22px;
+      font-size: 20px;
       max-width: 70%;
     }
 
     @media (min-width: 1024px) {
-      font-size: 28px;
+      font-size: 24px;
     }
 
     @media (min-width: 1440px) {
-      font-size: 32px;
+      font-size: 28px;
     }
   }
 
