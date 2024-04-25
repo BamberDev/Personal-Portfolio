@@ -6,7 +6,6 @@ import { nanoid } from "nanoid";
 import { navbarOptions } from "../../data/navbarOptions";
 import logo from "../../assets/Logo_KC_Lato.svg";
 import styles from "./Navbar.module.scss";
-import MagneticHover from "../../animations/MagneticHover/MagneticHover";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -70,9 +69,7 @@ const Navbar = () => {
       <div className={clsx("container", styles.navbarContent)}>
         <div>
           <a href="/" aria-label="Logo with a link to my website">
-            <MagneticHover>
-              <img src={logo} alt="My own logo - KC" />
-            </MagneticHover>
+            <img src={logo} alt="My own logo - KC" />
           </a>
         </div>
         <div className={clsx(styles.menu, showMenu && styles.showMenu)}>
