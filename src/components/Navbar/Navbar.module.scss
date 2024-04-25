@@ -1,6 +1,6 @@
 .navbarContainer {
   width: 100%;
-  padding: 5px 0;
+  padding: 0;
   background-color: var(--dark-grey-color);
   display: flex;
   justify-content: center;
@@ -8,6 +8,10 @@
   position: fixed;
   z-index: 5;
   transition: opacity 1s;
+
+  @media (min-width: 1440px) {
+    padding: 5px 0;
+  }
 
   &.hidden {
     opacity: 0;
