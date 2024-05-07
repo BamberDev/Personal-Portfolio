@@ -1,6 +1,5 @@
 import NextIcon from "./../assets/WantToLearnIcons/nextjs.svg";
 import TypeScriptIcon from "./../assets/WantToLearnIcons/typescript.svg";
-import TailwindIcon from "./../assets/WantToLearnIcons/tailwind.svg";
 import NodeIcon from "./../assets/WantToLearnIcons/nodejs.svg";
 import MongoDBIcon from "./../assets/WantToLearnIcons/mongodb.svg";
 
@@ -17,13 +16,6 @@ export const wantToLearnOptions = [
     description: "NEXT.JS",
     url: "https://nextjs.org/",
   },
-  {
-    alt: "Tailwind icon",
-    icon: TailwindIcon,
-    description: "TAILWIND",
-    url: "https://tailwindcss.com/",
-  },
-
   {
     alt: "NodeJS icon",
     icon: NodeIcon,
