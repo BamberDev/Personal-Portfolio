@@ -3,6 +3,7 @@ import ReactIcon from "./../assets/TechStackIcons/react.svg";
 import CssIcon from "./../assets/TechStackIcons/css.svg";
 import HtmlIcon from "./../assets/TechStackIcons/html.svg";
 import BootstrapIcon from "./../assets/TechStackIcons/bootstrap.svg";
+import TailwindIcon from "./../assets/TechStackIcons/tailwind.svg";
 import GitIcon from "./../assets/TechStackIcons/git.svg";
 import SassIcon from "./../assets/TechStackIcons/sass.svg";
 import GSAPIcon from "./../assets/TechStackIcons/gsap.svg";
@@ -10,6 +11,7 @@ import FramerMotionIcon from "./../assets/TechStackIcons/framer-motion.svg";
 import ViteIcon from "./../assets/TechStackIcons/vitejs.svg";
 import FigmaIcon from "./../assets/TechStackIcons/figma.svg";
 import NetlifyIcon from "./../assets/TechStackIcons/netlify.svg";
+import VercelIcon from "./../assets/TechStackIcons/vercel.svg";
 import LighthouseIcon from "./../assets/TechStackIcons/lighthouse.svg";
 
 export const techStackOptions = [
@@ -42,6 +44,12 @@ export const techStackOptions = [
     icon: BootstrapIcon,
     description: "BOOTSTRAP",
     url: "https://getbootstrap.com/",
+  },
+  {
+    alt: "Tailwind icon",
+    icon: TailwindIcon,
+    description: "TAILWIND",
+    url: "https://tailwindcss.com/",
   },
   {
     alt: "Sass icon",
@@ -84,6 +92,12 @@ export const techStackOptions = [
     icon: NetlifyIcon,
     description: "NETLIFY",
     url: "https://www.netlify.com/",
+  },
+  {
+    alt: "Vercel icon",
+    icon: VercelIcon,
+    description: "VERCEL",
+    url: "https://www.vercel.com/",
   },
   {
     alt: "Lighthouse icon",
