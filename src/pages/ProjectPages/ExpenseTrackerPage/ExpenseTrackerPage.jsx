@@ -6,18 +6,12 @@ const ExpenseTrackerPage = () => {
 
   const content = (
     <p>
-      Overview This simple application is designed to help users monitor their
-      expenses within their household budget for a given month. The application
-      allows users to input both income sources (e.g., salary, sales on online
-      platforms) and expenses (e.g., groceries, bills) in the form of a list.
-      Users can also edit the name and amount of each entry and have the option
-      to delete a specific item. Features -Income and Expense Tracking: Easily
-      input and track various income sources and expenses for the month. -Edit
-      Entries: Users have the ability to edit the name and amount of each entry
-      for accuracy. -Delete Entries: Remove any entry that is no longer
-      relevant. -Balance Overview: The application provides a real-time balance
-      overview, displaying messages based on the financial status. Currency The
-      default currency for this application is Polish Złoty (PLN).
+      This Expense Tracker App is designed to help users manage their personal
+      finances efficiently. This intuitive and user-friendly application enables
+      you to track your income, monitor your expenses, and gain valuable
+      insights into your spending habits. Whether you&apos;re aiming to save
+      more money, cut down on unnecessary expenses, or simply get a better grasp
+      of your financial situation, our app is the perfect tool for you.
     </p>
   );
 
