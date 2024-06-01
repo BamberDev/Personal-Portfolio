@@ -1,8 +1,8 @@
 import image1 from "./../assets/ProjectImages/SpaceInvadersImage.svg";
 import image2 from "./../assets/ProjectImages/PersonalWebsiteImage.svg";
 import image3 from "./../assets/ProjectImages/ExpenseTrackerImage.svg";
-import image4 from "./../assets/ProjectImages/UrlShortenerImage.svg";
-import image5 from "./../assets/ProjectImages/CurrencyConverterImage.svg";
+import image4 from "./../assets/ProjectImages/UrlShortenerImage.png";
+import image5 from "./../assets/ProjectImages/CurrencyConverterImage.png";
 
 const projects = [
   {
