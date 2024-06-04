@@ -53,12 +53,12 @@ const projects = [
     title: "CURRENCY CONVERTER",
     src: image5,
     color: "#3a3a3a",
-    description: "REACT CSS/SCSS JS",
+    description: "HTML BOOTSTRAP JS",
     path: "/currency-converter",
     alt: "Image of my currency converter project",
-    code: "https://github.com/BamberDev/React-Currency-Converter",
-    demo: "https://rcc-fc.netlify.app/",
-    techStack: "HTML, CSS/SCSS, JS, REACT, RESTful API, BOOTSTRAP",
+    code: "https://github.com/BamberDev/Currency-Converter",
+    demo: "https://nbp-fc.netlify.app/",
+    techStack: "HTML, BOOTSTRAP, JS, RESTful API",
   },
 ];
 
